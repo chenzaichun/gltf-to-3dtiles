@@ -33,6 +33,12 @@ jobs:
       with:
         path: gltf-to-3dtiles
 
+    - name: echo files
+      run: |
+          cd $Env.GITHUB_WORKSPACE
+          dir /s /b /o:gn
+
+
     - name: Build Seatbelt
       run: |
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\"

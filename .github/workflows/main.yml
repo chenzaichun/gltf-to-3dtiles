@@ -19,7 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: microsoft/setup-msbuild@v1.0.0
+    # - uses: microsoft/setup-msbuild@v1.0.0
     #- uses: microsoft/virtual-environments
     
     # checks out vcgs 
@@ -35,6 +35,7 @@ jobs:
 
     - name: Build Seatbelt
       run: |
+          cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\Bin\"
           SET VCG_LIB=$Env.GITHUB_WORKSPACE\vcglib
           MSBuild.exe $Env:GITHUB_WORKSPACE\gltf-to-3dtiles\GLTF_OPTIMIZER\GLTF_OPTIMIZER.vcxproj
 

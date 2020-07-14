@@ -36,8 +36,8 @@ jobs:
     - name: Build Seatbelt
       run: |
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\"
-          SET VCG_LIB=$Env.GITHUB_WORKSPACE\vcglib
-          SET VCGLIB_ORIGIN=$Env.GITHUB_WORKSPACE\vcglib
-          .\MSBuild.exe $Env:GITHUB_WORKSPACE\gltf-to-3dtiles\GLTF_OPTIMIZER\GLTF_OPTIMIZER.vcxproj  /p:AdditionalIncludePaths=$Env.GITHUB_WORKSPACE\vcglib
+          SET VCG_LIB=$Env.GITHUB_WORKSPACE\vcglib\vcglib
+          SET VCGLIB_ORIGIN=$Env.GITHUB_WORKSPACE\vcglib\vcglig
+          .\MSBuild.exe $Env:GITHUB_WORKSPACE\gltf-to-3dtiles\GLTF_OPTIMIZER\GLTF_OPTIMIZER.vcxproj  /p:AdditionalIncludePaths=$Env.GITHUB_WORKSPACE\vcglib\vcglib
 
 

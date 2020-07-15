@@ -42,11 +42,13 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: Build Seatbelt
+      shell: cmd
       run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\"
-          SET VCG_LIB=$Env:GITHUB_WORKSPACE\vcglib
-          SET VCGLIB=$Env:GITHUB_WORKSPACE\vcglib
-          SET VCGLIB_ORIGIN=$Env:GITHUB_WORKSPACE\vcglib
-          .\MSBuild.exe $Env:GITHUB_WORKSPACE\gltf-to-3dtiles\GLTF_OPTIMIZER\GLTF_OPTIMIZER.vcxproj  /p:AdditionalIncludePaths="$Env:GITHUB_WORKSPACE\vcglib"  /p:UseEnv=true /p:PlatformToolset=v140 /p:PreferredToolArchitecture=x64 /p:VisualStudioVersion=15.0 /p:Configuration=Release
+          SET VCG_LIB=%GITHUB_WORKSPACE%\vcglib
+          SET VCGLIB=%GITHUB_WORKSPACE%\vcglib
+          SET VCGLIB_ORIGIN=%GITHUB_WORKSPACE%\vcglib
+          C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\amd64\MSBuild.exe %GITHUB_WORKSPACE%\gltf-to-3dtiles\GLTF_OPTIMIZER\GLTF_OPTIMIZER.vcxproj  /p:AdditionalIncludePaths="%GITHUB_WORKSPACE%\vcglib"  /p:UseEnv=true /p:PlatformToolset=v140 /p:PreferredToolArchitecture=x64 /p:VisualStudioVersion=15.0 /p:Configuration=Release
 
 

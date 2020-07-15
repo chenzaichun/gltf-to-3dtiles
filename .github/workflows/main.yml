@@ -41,6 +41,7 @@ jobs:
 
     - name: Build Seatbelt
       run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\"
           SET VCG_LIB=$Env:GITHUB_WORKSPACE\vcglib
           SET VCGLIB=$Env:GITHUB_WORKSPACE\vcglib

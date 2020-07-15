@@ -19,7 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: microsoft/setup-msbuild@v1.0.0
+    # - uses: microsoft/setup-msbuild@v1.0.0
     # - uses: microsoft/virtual-environments
     
     # checks out vcgs 
@@ -38,6 +38,8 @@ jobs:
     #       cd $Env.GITHUB_WORKSPACE
     #       tree /f $Env.GITHUB_WORKSPACE
 
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: Build Seatbelt
       run: |

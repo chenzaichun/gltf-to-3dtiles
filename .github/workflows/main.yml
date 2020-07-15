@@ -42,7 +42,7 @@ jobs:
     - name: Build Seatbelt
       shell: cmd
       env:
-        workdir: $Env:GITHUB_WORKSPACE
+        workdir: ${{ Env.GITHUB_WORKSPACE }}
       run: |
           call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\"
